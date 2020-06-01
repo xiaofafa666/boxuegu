@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_register"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/register_bg"
+    android:orientation="vertical"
+    tools:context=".activity.RegisterActivity">
+
+    <include layout="@layout/main_title_bar" />
+
+
+
+    <EditText
+        android:id="@+id/et_original_psw"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginRight="35dp"
+        android:background="@drawable/register_user_name_bg"
+        android:drawableLeft="@drawable/psw_icon"
+        android:drawablePadding="8dp"
+        android:gravity="center_vertical"
+        android:hint="请输入原始密码"
+        android:maxLines="1"
+        android:paddingLeft="10dp"
+        android:textColor="#000000"
+        android:textColorHint="#a3a3a3"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/et_new_psw"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        android:background="@drawable/register_user_name_bg"
+        android:drawableLeft="@drawable/psw_icon"
+        android:drawablePadding="8dp"
+        android:gravity="center_vertical"
+        android:hint="请输入新密码"
+        android:inputType="textPassword"
+        android:maxLines="1"
+        android:paddingLeft="10dp"
+        android:textColor="#000000"
+        android:textColorHint="#a3a3a3"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/et_psw_again"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        android:background="@drawable/register_user_name_bg"
+        android:drawableLeft="@drawable/psw_icon"
+        android:drawablePadding="8dp"
+        android:gravity="center_vertical"
+        android:hint="请再次输入新密码"
+        android:inputType="textPassword"
+        android:maxLines="1"
+        android:paddingLeft="10dp"
+        android:textColor="#000000"
+        android:textColorHint="#a3a3a3"
+        android:textSize="14sp" />
+
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginRight="35dp"
+        android:background="@drawable/register_selector"
+        android:text="保存"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
+
+</LinearLayout>
