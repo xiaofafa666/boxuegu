@@ -75,18 +75,68 @@ public class FindPswActivity extends AppCompatActivity {
                         FindPswActivity.this.finish();
                     }
                 }else {
-                    //找回密码
+                      //找回密码
+                    String userName = et_user_name.getText().toString().trim();
+                    String sp_security = readSecurity(userName);
+                    if (TextUtils.isEmpty(userName)){
+                        Toast.makeText(FindPswActivity.this,"请输入用户名",Toast.LENGTH_SHORT).show();
+                        return;
 
+                    }else if(!isExistUserName(userName)){
+                        Toast.makeText(FindPswActivity.this,"当前用户名不存在",Toast.LENGTH_SHORT).show();
+                        return;
+                    }else if (TextUtils.isEmpty(validateName)){
+                        Toast.makeText(FindPswActivity.this,"请输入此用户名密保",Toast.LENGTH_SHORT).show();
+
+                        return;
+                    }else if (!validateName.equals(sp_security)){
+
+                        Toast.makeText(FindPswActivity.this,"密保输入有误",Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                    else {
+                        tv_reset_psw.setVisibility(View.VISIBLE);
+
+                        tv_reset_psw.setText("初始密码：123456");
+                        Toast.makeText(FindPswActivity.this,"找回密码成功，初始密码为：123456",Toast.LENGTH_SHORT).show();
+
+                        savePsw(userName);
+                    }
                 }
 
             }
         });
     }
 
+    private void savePsw(String userName) {
+        String md5Psw = com.example.xiaofafa.boxuegu2.udil.Md5Utils.md5("123456");
+        SharedPreferences sp = getSharedPreferences("loginInfo", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sp.edit();
+        editor.putString(userName,md5Psw);
+        editor.commit();
+    }
+
+    private boolean isExistUserName(String userName) {
+        boolean hasUserName = false;
+        SharedPreferences sp = getSharedPreferences("loginInfo", MODE_PRIVATE);
+        String spPsw = sp.getString(userName,"");
+        if (!TextUtils.isEmpty(spPsw)){
+            hasUserName = true;
+        }
+        return  hasUserName;
+
+    }
+
+    private String readSecurity(String userName) {
+        SharedPreferences sp = getSharedPreferences("loginInfo",MODE_PRIVATE);
+        String security = sp.getString(userName+"_security","");
+        return security;
+    }
+
     private void saveSecurity(String validateName){
         SharedPreferences sp = getSharedPreferences("loginInfo", MODE_PRIVATE);
         SharedPreferences.Editor editor = sp.edit();
-        editor.putString(AnalysisUtils.readLoginUserName(this)+"security",validateName);
+        editor.putString(AnalysisUtils.readLoginUserName(this)+"_security",validateName);
         editor.commit();
     }
 }
