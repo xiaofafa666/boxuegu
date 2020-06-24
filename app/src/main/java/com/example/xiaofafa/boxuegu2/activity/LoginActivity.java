@@ -7,7 +7,6 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.view.Display;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,7 +14,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.xiaofafa.boxuegu2.FindPswActivity;
 import com.example.xiaofafa.boxuegu2.R;
 import com.example.xiaofafa.boxuegu2.udil.Md5Utils;
 

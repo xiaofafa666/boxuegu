@@ -10,7 +10,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.xiaofafa.boxuegu2.FindPswActivity;
 import com.example.xiaofafa.boxuegu2.R;
 
 public class SettingActivity extends AppCompatActivity {

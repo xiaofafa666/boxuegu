@@ -45,6 +45,9 @@ public class MyInfoView {
         tv_user_name = (TextView) mCurrentView.findViewById(R.id.tv_user_name);
         mCurrentView.setVisibility(View.VISIBLE);
 
+        //修复账号未退出时账号名不显示问题
+        setLoginParams(readLoginStatus());
+
 
         ll_head.setOnClickListener(new View.OnClickListener() {
             @Override

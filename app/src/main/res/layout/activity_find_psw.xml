@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/login_bg"
-    tools:context=".FindPswActivity">
+    tools:context=".activity.FindPswActivity">
 <include layout="@layout/main_title_bar"/>
     <TextView
         android:id="@+id/tv_user_name"

@@ -1,4 +1,4 @@
-package com.example.xiaofafa.boxuegu2;
+package com.example.xiaofafa.boxuegu2.activity;
 
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.xiaofafa.boxuegu2.R;
 import com.example.xiaofafa.boxuegu2.utils.AnalysisUtils;
 
 public class FindPswActivity extends AppCompatActivity {
@@ -37,9 +38,13 @@ public class FindPswActivity extends AppCompatActivity {
 
         tv_user_name = (TextView) findViewById(R.id.tv_user_name);
         et_user_name = (EditText)  findViewById(R.id.et_user_name);
-        et_validate_name = (EditText)  findViewById(R.id.et_validate_name);
+         et_validate_name =(EditText) findViewById(R.id.et_validate_name);
+
         tv_reset_psw = (TextView)  findViewById(R.id.tv_reset_psw);
         btn_validate = (Button) findViewById(R.id.btn_validate);
+
+
+
         if("security".equals(from)){
             tv_main_title.setText("设置密保");
         }else{
@@ -59,7 +64,8 @@ public class FindPswActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String validateName= et_validate_name.getText().toString().trim();
-                if("sucurity".equals(from)){
+//                Toast.makeText(FindPswActivity.this,"输入值为"+validateName,Toast.LENGTH_SHORT).show();
+                if("security".equals(from)){
                     if(TextUtils.isEmpty(validateName)){
                         Toast.makeText(FindPswActivity.this,"请输入需要验证的姓名",Toast.LENGTH_SHORT).show();
                         return;
