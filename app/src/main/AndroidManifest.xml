@@ -23,6 +23,7 @@
         <activity android:name=".activity.ChangeUserInfoActivity" />
         <activity android:name=".activity.SettingActivity" />
         <activity android:name=".activity.ModifyPswActivity" />
+        <activity android:name=".activity.UserInfoActivity"></activity>
     </application>
 
 </manifest>

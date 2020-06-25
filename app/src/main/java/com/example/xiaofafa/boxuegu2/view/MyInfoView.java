@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.example.xiaofafa.boxuegu2.R;
 import com.example.xiaofafa.boxuegu2.activity.LoginActivity;
 import com.example.xiaofafa.boxuegu2.activity.SettingActivity;
+import com.example.xiaofafa.boxuegu2.activity.UserInfoActivity;
 import com.example.xiaofafa.boxuegu2.utils.AnalysisUtils;
 
 public class MyInfoView {
@@ -54,6 +55,8 @@ public class MyInfoView {
             public void onClick(View v) {
                 if (readLoginStatus()){
                     Toast.makeText(mContext,"跳转到个人页面",Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(mContext,UserInfoActivity.class);
+                    mContext.startActivity(intent);
                 }else{
                     Intent intent =new Intent(mContext,LoginActivity.class);
                     mContext.startActivityForResult(intent,1);
