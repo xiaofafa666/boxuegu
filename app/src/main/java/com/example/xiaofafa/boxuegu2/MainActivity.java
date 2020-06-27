@@ -16,6 +16,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.xiaofafa.boxuegu2.view.ExercisesView;
 import com.example.xiaofafa.boxuegu2.view.MyInfoView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
@@ -36,6 +37,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ImageView iv_myinfo;
     private TextView tv_myinfo;
     private MyInfoView mMyInfoView;
+    private ExercisesView mExercisesView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -146,6 +148,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Toast.makeText(this,"课程页面待完成",Toast.LENGTH_SHORT).show();
                 break;
             case 1:
+                if (mExercisesView == null) {
+                    mExercisesView = new ExercisesView(this);
+                    mBodyLayout.addView(mExercisesView.getView());
+                }else{
+                    mExercisesView.getView();
+                }
+                mExercisesView.showView();
                 Toast.makeText(this,"习题页面待完成",Toast.LENGTH_SHORT).show();
                 break;
             case 2:
