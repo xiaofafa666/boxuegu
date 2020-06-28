@@ -1,6 +1,7 @@
-package com.example.xiaofafa.boxuegu2.bean;
+package com.example.xiaofafa.boxuegu2.adpater;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.xiaofafa.boxuegu2.R;
+import com.example.xiaofafa.boxuegu2.activity.ExercisesDetailActivity;
+import com.example.xiaofafa.boxuegu2.bean.ExercisesBean;
 
 import java.util.List;
 
@@ -68,6 +71,10 @@ public class ExercisesAdapter extends BaseAdapter {
                 if (bean == null){
                    return;
                 }
+                Intent intent = new Intent(mContext, ExercisesDetailActivity.class);
+                intent.putExtra("id",bean.id);
+                intent.putExtra("title",bean.title);
+                mContext.startActivity(intent);
                 Toast.makeText(mContext,"跳转习题详情页面",Toast.LENGTH_SHORT).show();
             }
         });

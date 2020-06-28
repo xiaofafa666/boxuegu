@@ -1,5 +1,7 @@
 package com.example.xiaofafa.boxuegu2.bean;
 
+//正确
+
 public class ExercisesBean {
     public int id;    //习题id
     public String title;    //习题标题

@@ -1,4 +1,5 @@
-package com.example.xiaofafa.boxuegu2.udil;
+//package com.example.xiaofafa.boxuegu2.udil;
+package com.example.xiaofafa.boxuegu2.utils;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;

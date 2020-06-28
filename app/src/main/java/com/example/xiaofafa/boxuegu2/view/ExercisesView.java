@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.ListView;
 
 import com.example.xiaofafa.boxuegu2.R;
-import com.example.xiaofafa.boxuegu2.bean.ExercisesAdapter;
+import com.example.xiaofafa.boxuegu2.adpater.ExercisesAdapter;
 import com.example.xiaofafa.boxuegu2.bean.ExercisesBean;
 
 import java.util.ArrayList;
